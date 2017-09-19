@@ -13,7 +13,7 @@ apt-get install -y curl
 # Setup php
 apt-get install -y php libapache2-mod-php php-mcrypt php-mysql php-cli php-mbstring php-gettext
 mv /etc/apache2/mods-enabled/dir.conf /etc/apache2/mods-enabled/dir.conf.orig
-cp /vagrant/bundle/config_bundle/dir.conf /etc/apache2/mods-enabled/dir.conf
+cp /vagrant/bundle/config_bundle/apache2/dir.conf /etc/apache2/mods-enabled/dir.conf
 chmod 755 -R /var/www/;
 printf "<?php\nphpinfo();\n?>" > /var/www/html/info.php;
 
