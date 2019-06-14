@@ -23,7 +23,7 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
-  config.vm.box = "bento/ubuntu-16.04-i386"
+  config.vm.box = "bento/ubuntu-18.04"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -80,7 +80,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "bundle/install_bundle/setup_server.sh"
 
   # Provision MySQL
-  config.vm.provision "shell", path: "bundle/install_bundle/mysql.sh", args: [mysql_root_password, mysql_version, mysql_enable_remote]
+  # config.vm.provision "shell", path: "bundle/install_bundle/mysql.sh", args: [mysql_root_password, mysql_version, mysql_enable_remote]
 
   # Provision MySQL secure
   # config.vm.provision "shell", path: "bundle/install_bundle/mysql_secure.sh", args: [mysql_root_password]
@@ -92,12 +92,12 @@ Vagrant.configure("2") do |config|
   # config.vm.provision "shell", path: "bundle/install_bundle/mariadb_secure.sh", args: [mysql_root_password]
 
   # Provision PhpMyAdmin
-  config.vm.provision "shell", path: "bundle/install_bundle/phpmyadmin.sh", args: [mysql_root_password]
+  # config.vm.provision "shell", path: "bundle/install_bundle/phpmyadmin.sh", args: [mysql_root_password]
 
   # Execute Database
-  config.vm.provision "shell", path: "bundle/config_database/execute_db.sh", args: [mysql_root_username,mysql_root_password,db_name]
+  # config.vm.provision "shell", path: "bundle/config_database/execute_db.sh", args: [mysql_root_username,mysql_root_password,db_name]
 
-  config.vm.synced_folder "./", "/var/www/html", :mount_options => ["dmode=777", "fmode=777"]
+  # config.vm.synced_folder "./", "/var/www/html", :mount_options => ["dmode=777", "fmode=777"]
 
     # apt-get update
     # apt-get install -y apache2
